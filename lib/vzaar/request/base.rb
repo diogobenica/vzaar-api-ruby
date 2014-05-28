@@ -23,7 +23,7 @@ module Vzaar
         def format(f)
           define_method(:format) do
             # JC: options should always overwrite format param
-            options[:format] ? options[:format] : f
+            self.options[:format] ? self.options[:format] : f
           end
         end
       end

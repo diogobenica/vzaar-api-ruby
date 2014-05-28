@@ -4,7 +4,7 @@ module Vzaar
       include Vzaar::Helper
 
       class << self
-        [:authenticated, :http_verb, :format].each do |method_name|
+        [:authenticated, :http_verb].each do |method_name|
           define_method(method_name) do |val|
             define_method(method_name) do
               val.nil? ? self.options[method_name] : val
@@ -18,6 +18,13 @@ module Vzaar
 
         def resource(name)
           define_method(:resource) { name }
+        end
+
+        def format(f)
+          define_method(:format) do
+            # JC: options should always overwrite format param
+            options[:format] ? options[:format] : f
+          end
         end
       end
 

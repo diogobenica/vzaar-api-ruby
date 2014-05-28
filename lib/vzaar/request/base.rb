@@ -34,7 +34,12 @@ module Vzaar
 
       def execute
         conn.using_connection(url, user_options) do |res|
-          return resource_klass.new(Response::Base.new(res).body, res.code)
+          _res = Response::Base.new(res)
+          if _res.json?
+            return _res.body
+          else
+            return resource_klass.new(_res.body, res.code)
+          end
         end
       end
 

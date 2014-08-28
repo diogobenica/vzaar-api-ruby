@@ -14,5 +14,9 @@ namespace :spec do
       exec 'API_ENV=development bundle exec rspec examples'
     end
 
+    task :qa do
+      exec 'API_ENV=qa bundle exec rspec examples'
+    end
+
   end
 end

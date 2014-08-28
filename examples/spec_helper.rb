@@ -50,6 +50,7 @@ end
 def server
   case env
   when "development" then "http://app.vzaar.localhost"
+  when "qa" then "http://app.qavzr.com"
   end
 end
 

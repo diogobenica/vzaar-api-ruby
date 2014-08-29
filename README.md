@@ -46,7 +46,7 @@ api.video_details(video_id, options)
 
 Getting details from private video (authentication required):
 ```ruby
-api.video_details(video_id, authenticated: true)
+api.video_details(video_id)
 ```
 
 Fetching videos for a given user:

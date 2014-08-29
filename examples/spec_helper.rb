@@ -50,7 +50,7 @@ end
 def server
   case env
   when "development" then "http://app.vzaar.localhost"
-  when "qa" then "http://app.qavzr.com"
+  when "qa" then "http://qavzr.com"
   end
 end
 
@@ -84,8 +84,7 @@ end
 def conn_params(params={})
   { application_token: params[:application_token],
     login: params[:login],
-    server: server,
-    force_http: true }
+    server: server }
 end
 
 def _api(params)

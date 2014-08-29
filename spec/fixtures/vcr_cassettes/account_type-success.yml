@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://vzaar.com/api/accounts/100.xml
+    uri: https://vzaar.com/api/accounts/100.xml
     body:
       encoding: US-ASCII
       string: ''
@@ -44,6 +44,6 @@ http_interactions:
         \ <currency>$</currency>\n </cost>\n <bandwidth>107374182400</bandwidth>\n
         <rights>\n  <borderless>true</borderless>\n  <searchEnhancer>true</searchEnhancer>\n
         </rights>\n</account>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 21 Nov 2013 11:36:17 GMT
 recorded_with: VCR 2.7.0

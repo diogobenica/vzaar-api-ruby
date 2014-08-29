@@ -78,12 +78,14 @@ def test_video_id(account)
   api_envs[env][account]["test_video_id"]
 end
 
-def user_ro
+def force_http
+  env == "development" ? true : false
 end
 
 def conn_params(params={})
   { application_token: params[:application_token],
     login: params[:login],
+    force_http: force_http,
     server: server }
 end
 

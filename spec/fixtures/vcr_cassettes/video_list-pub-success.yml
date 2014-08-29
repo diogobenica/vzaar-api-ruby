@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://vzaar.com/api/api-test-user/videos.xml?page=1
+    uri: https://vzaar.com/api/api-test-user/videos.xml?page=1
     body:
       encoding: US-ASCII
       string: ''
@@ -48,6 +48,6 @@ http_interactions:
         \  <author_url>http://vzaar.com/users/api-test-user</author_url>\n   <author_account>34</author_account>\n
         \  <video_count>32</video_count>\n  </user>\n  <duration>16.92</duration>\n
         \ <height>256</height>\n  <width>320</width>\n </video>\n</videos>\n"
-    http_version: 
+    http_version:
   recorded_at: Fri, 22 Nov 2013 11:32:25 GMT
 recorded_with: VCR 2.7.0

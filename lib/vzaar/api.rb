@@ -27,7 +27,7 @@ module Vzaar
     end
 
     def videos(opts={})
-      video_list(conn.login, { authenticated: true, page: opts[:page] })
+      video_list(conn.login, { page: opts[:page] })
     end
 
     def delete_video(video_id, opts={})

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://vzaar.com/api/videos/1403915.xml
+    uri: https://vzaar.com/api/videos/1403915.xml
     body:
       encoding: US-ASCII
       string: ''
@@ -54,6 +54,6 @@ http_interactions:
         webkitAllowFullScreen width=\"320\"></iframe>]]>\n </html>\n <height>256</height>\n
         <width>320</width>\n <duration>16.92</duration>\n <video_status_id>2</video_status_id>\n
         <video_status_description>Active</video_status_description>\n <play_count>0</play_count>\n</oembed>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 21 Nov 2013 17:54:13 GMT
 recorded_with: VCR 2.7.0

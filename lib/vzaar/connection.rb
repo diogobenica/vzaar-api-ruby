@@ -13,8 +13,6 @@ module Vzaar
     end
 
     def using_connection(url, opts={}, &block)
-      connection = opts[:authenticated] ? authorised_connection : public_connection
-
       case opts[:http_verb]
       when :get
         yield handle_response(connection.get(url)) if block_given?
@@ -45,23 +43,18 @@ module Vzaar
       @sanitized_url ||= options[:server].gsub(/(http|https)\:\/\//, "") if options[:server]
     end
 
-    def consumer(authorised = false)
-      site = "#{protocol(authorised)}://#{server}"
+    def consumer
+      site = "#{protocol}://#{server}"
       c = OAuth::Consumer.new('', '', { :site => site })
       c.extend(OAuthExt::Multipart)
     end
 
-    def protocol(authorised)
-      return 'http' if force_http
-      authorised ? 'https' : 'http'
+    def protocol
+      force_http ? 'http' : 'https'
     end
 
-    def authorised_connection
-      @authorised_connection ||= OAuth::AccessToken.new consumer(true), login, application_token
-    end
-
-    def public_connection
-      @public_connection ||= OAuth::AccessToken.new consumer, '', ''
+    def connection
+      @connection ||= OAuth::AccessToken.new(consumer, login, application_token)
     end
 
     def handle_response(response)

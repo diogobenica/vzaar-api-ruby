@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://vzaar.com/api/accounts/-1.xml
+    uri: https://vzaar.com/api/accounts/-1.xml
     body:
       encoding: US-ASCII
       string: ''
@@ -39,6 +39,6 @@ http_interactions:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n      <error>Object not
         found</error>"
-    http_version: 
+    http_version:
   recorded_at: Thu, 21 Nov 2013 11:36:17 GMT
 recorded_with: VCR 2.7.0
